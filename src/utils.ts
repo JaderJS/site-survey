@@ -23,13 +23,19 @@ interface params {
     pt?: number
     pw?: number
     d: number
-    h: number
+    hr: number
+    ht: number
+    f: number
 }
 
-export const pathLoos = ({ d, h }: params) => {
+export const pathLoos = ({ f, d, hr, ht }: params) => {
     const A = 69.5
     const B = 26.16
-    const C = -4
-    const loss = A + B * Math.log10(d) + C - 13.82 * Math.log10(h) - (44.9 - 6.55 * Math.log10(h)) * Math.log10(d * 1E3)
-    console.log(loss, "dBm")
+    const Ahm = (1.1 * Math.log10(f) - 0.7) * ht - (1.56 * Math.log10(f) - 0.8)
+    const loss = A + B * Math.log10(f) - 13.82 * Math.log10(hr) - Ahm + (44.9 - 6.55 * Math.log10(hr)) * Math.log10(d / 1000)
+    return loss
+}
+
+export const wattsToDbm = (w: number) => {
+    return 10 * Math.log10(w * 1000)
 }

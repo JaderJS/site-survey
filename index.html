@@ -15,10 +15,24 @@
 
 <body>
   <h1>My Site Survey</h1>
+
+  <label for="frequency">Frequency (MHz)</label>
+  <input type="text" id="frequencyInput" name="frequency" />
+
+  <label for="tower">Altura da torre (M)</label>
+  <input type="text" id="towerInput" name="tower" />
+
+  <label for="terminal">Altura do terminal (M)</label>
+  <input type="text" id="terminalInput" name="terminal" />
+
+  <div id="pathLoss"></div>
+  <button id="pathLossBtn">Calcular</button>
+
   <select id="ports"></select>
   <button id="connectBtn">Conectar</button>
   <button id="disconnectBtn">Desconectar</button>
   <textarea id="received"></textarea>
+
   <div id="error"></div>
   <div id="map" class="map"></div>
 </body>
