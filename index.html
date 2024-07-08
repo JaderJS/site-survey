@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./global.css" />
+  <!-- <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'"> -->
+
+  <link rel="stylesheet" href="node_modules/leaflet/dist/leaflet.css">
+  <title>Site survey</title>
+</head>
+
+<body>
+  <h1>My Site Survey</h1>
+  <select id="ports"></select>
+  <button id="connectBtn">Conectar</button>
+  <button id="disconnectBtn">Desconectar</button>
+  <textarea id="received"></textarea>
+  <div id="error"></div>
+  <div id="map" class="map"></div>
+</body>
+<script type="module" src="./dist/renderer/render.js" defer></script>
+
+<script src="node_modules/leaflet/dist/leaflet.js"></script>
+<script src="./dist/leaflet-heat.js"></script>
+<script src="./dist/renderer/map.js"></script>
+
+</html>
